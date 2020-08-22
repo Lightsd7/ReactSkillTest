@@ -3,7 +3,7 @@ import { Container, Invoice, Logo } from "./styles";
 
 import image from "../../assets/metaware_logo.png";
 
-export default function Branding(props) {
+export default function Branding() {
     const [number, setNumber] = useState(10);
     const [img, setImg] = useState(true);
     const hide = () => setImg(false);

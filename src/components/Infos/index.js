@@ -3,9 +3,10 @@ import { Left, Right } from "./styles";
 
 import Input from "../Input/index";
 
-export default function Infos(props) {
+export default function Infos() {
     const [name, setName] = useState("Mr. John Doe");
     const [inc, setInc] = useState("John Doe Designs Inc.");
+    const [loop, setLoop] = useState("1 Infinite Loop");
     const [lab, setLab] = useState("Metaware Labs");
 
     function changeName(e) {
@@ -16,6 +17,10 @@ export default function Infos(props) {
         setInc(e.target.value);
     }
 
+    function changeLoop(e) {
+        setLoop(e.target.value);
+    }
+
     function changeLab(e) {
         setLab(e.target.value);
     }
@@ -23,8 +28,9 @@ export default function Infos(props) {
     return (
         <div className="col">
             <Left>
-                <Input type="text" value={name} onChange={changeName}></Input>
+                <Input type="text" value={name} onChange={changeName} />
                 <Input type="text" value={inc} onChange={changeInc} />
+                <Input type="text" value={loop} onChange={changeLoop} />
                 <select>
                     <option>British Pound (£)</option>
                     <option>Canadian Dollar ($)</option>
