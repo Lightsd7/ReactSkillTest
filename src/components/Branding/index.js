@@ -5,6 +5,9 @@ import image from "../../assets/metaware_logo.png";
 
 export default function Branding(props) {
     const [number, setNumber] = useState(10);
+    const [img, setImg] = useState(true);
+    const hide = () => setImg(false);
+    const show = () => setImg(true);
 
     return (
         <Container>
@@ -13,10 +16,11 @@ export default function Branding(props) {
                 <input type="text" value={number}></input>
             </Invoice>
             <Logo>
-                <img src={image} />
+                <img src={img ? image : null} className="logo-img" />
                 <div>
-                    <a>Edit Logo</a>
-                    <a>Hide logo</a>
+                    <a onClick>Edit Logo</a>
+                    <a onClick={hide} className={img ? '' : 'hidden'}>Hide logo</a>
+                    <a onClick={show} className={img ? 'hidden' : ''}>Show logo</a>
                 </div>
             </Logo>
         </Container>

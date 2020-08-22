@@ -9,6 +9,7 @@ export const Invoice = styled.div`
     width: 50%;
     font-weight: bold;
     float: left;
+    padding-left: 10px;
     input {
         font-weight: bold;
     }
@@ -17,7 +18,7 @@ export const Invoice = styled.div`
 export const Logo = styled.div`
     text-align: right;
     float: right;
-    
+    padding-right: 10px;
     img {
         width: 300px;
         border: 0;
@@ -35,5 +36,8 @@ export const Logo = styled.div`
         &:hover {
             text-decoration: underline;
         }
+    }
+    .hidden{
+        display: none;
     }
 `;
