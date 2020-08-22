@@ -10,6 +10,7 @@ export const Left = styled.div`
     input {
         width: 300px;
         margin-top: 3px;
+        margin-bottom: 5px;
     }
     select{
         margin-top: 5px;
