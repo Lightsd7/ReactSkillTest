@@ -23,13 +23,8 @@ export const Logo = styled.div`
         width: 300px;
         border: 0;
         vertical-align: middle;
-        
-    }
-    div{
-        display: block;
     }
     a {
-        /* display: block; */
         color: #428bca;
         text-decoration: none;
         margin-left: 5px;
@@ -37,7 +32,7 @@ export const Logo = styled.div`
             text-decoration: underline;
         }
     }
-    .hidden{
+    .hidden {
         display: none;
     }
 `;

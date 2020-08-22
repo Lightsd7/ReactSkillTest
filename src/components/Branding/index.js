@@ -9,11 +9,15 @@ export default function Branding(props) {
     const hide = () => setImg(false);
     const show = () => setImg(true);
 
+    function change(e) {
+        setNumber(e.target.value);    
+    }
+
     return (
         <Container>
             <Invoice>
                 <label>Invoice #</label>
-                <input type="text" value={number}></input>
+                <input type="text" value={number} onChange={change}></input>
             </Invoice>
             <Logo>
                 <img src={img ? image : null} className="logo-img" />
