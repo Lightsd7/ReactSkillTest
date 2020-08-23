@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Head } from "./styles";
 import Input from "../Input/index";
 
-export default function Table() {
+export default function Table(props) {
     const [desc, setDesc] = useState("Gadget");
     const [quant, setQuant] = useState(10);
     const [cost, setCost] = useState(9.95);
@@ -24,6 +24,11 @@ export default function Table() {
         setTax(e.target.value);
     }
 
+    function reload() {
+        alert("Are you sure you would like to clear the invoice?");
+        window.location.reload(false);
+    }
+
     return (
         <Head>
             <table>
@@ -32,7 +37,7 @@ export default function Table() {
                         <th className="col-xs-1"></th>
                         <th className="col-xs-5">Description</th>
                         <th className="col-xs-2">Quantity</th>
-                        <th className="col-xs-2">Cost</th>
+                        <th className="col-xs-2">Cost {props.value}</th>
                         <th className="col-xs-2">Total</th>
                     </tr>
                 </thead>
@@ -54,7 +59,7 @@ export default function Table() {
                             <div className="quantity">
                                 <Input
                                     type="text"
-                                    value={quant}
+                                    value={quant + " " + props.value}
                                     onChange={changeQuant}
                                 />
                             </div>
@@ -65,7 +70,7 @@ export default function Table() {
                                     type="text"
                                     value={cost}
                                     onChange={changeCost}
-                                />
+                                /><span></span>
                             </div>
                         </td>
                         <td>
@@ -119,7 +124,7 @@ export default function Table() {
                     </tr>
                 </tbody>
             </table>
-            <button type="button" className="btn btn-primary" onClick>
+            <button type="button" className="btn btn-primary" onClick={reload}>
                 Reset
             </button>
             <button type="button" className="btn btn-primary" onClick>
